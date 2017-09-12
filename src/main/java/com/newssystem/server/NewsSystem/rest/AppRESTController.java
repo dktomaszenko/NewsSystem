@@ -1,14 +1,12 @@
 package com.newssystem.server.NewsSystem.rest;
 
 
+import com.newssystem.server.NewsSystem.domain.Comment;
 import com.newssystem.server.NewsSystem.domain.News;
 import com.newssystem.server.NewsSystem.service.CommentService;
 import com.newssystem.server.NewsSystem.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +27,15 @@ public class AppRESTController {
     public @ResponseBody
     List<News> findAll(){
         return newsService.getObj();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/saveNews")
+    public @ResponseBody News create(@RequestBody News newsEntity){
+        return newsService.create(newsEntity);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/saveComment")
+    public @ResponseBody Comment create(@RequestBody Comment commentEntity){
+        return commentService.create(commentEntity);
     }
 }
