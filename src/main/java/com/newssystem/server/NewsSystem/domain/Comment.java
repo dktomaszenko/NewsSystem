@@ -13,6 +13,8 @@ public class Comment {
     public String author;
     public String data;
 
+    public Comment(){}
+
     public Comment(String newsId, String comment, String author, String data) {
         NewsId = newsId;
         this.comment = comment;
