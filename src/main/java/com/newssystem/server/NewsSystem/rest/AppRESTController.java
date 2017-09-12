@@ -29,6 +29,12 @@ public class AppRESTController {
         return newsService.getObj();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/getComments")
+    public @ResponseBody List<Comment> findAllComment(){
+        return commentService.getObj();
+    }
+
+
     @RequestMapping(method = RequestMethod.POST, value = "/saveNews")
     public @ResponseBody News create(@RequestBody News newsEntity){
         return newsService.create(newsEntity);
