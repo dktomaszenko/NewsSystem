@@ -11,22 +11,22 @@ import javax.validation.constraints.Size;
 public class News {
 
     @Id
-    public String id;
+    private String id;
 
     @NotNull(message = "el campo no puede estar vacío")
     @Size(min = 5, max = 70, message = "minimo 5 caracteres, maximo 70 caracteres")
-    public String title;
+    private String title;
 
     @NotNull
     @Size(min = 5, message = "minimo 5 caracteres")
-    public String text;
+    private String text;
 
 
-    public String data;
+    private String data;
 
     @NotNull
     @Size(min = 1, message = "minimo 1 caracter")
-    public String author;
+    private String author;
 
     public News() {}
 
