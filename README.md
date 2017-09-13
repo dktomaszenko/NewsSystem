@@ -18,3 +18,15 @@ Restfull Spring Java
     mongod --dbpath (mi_path to db mongo)
  
     mongo-express -a -u newsAdminUser -p abc123
+
+# Crear jar con gradle
+
+    gradle clean
+    gradle fatJar
+    
+    
+The Jar is created under the $project/build/libs/ folder. 
+
+
+
+.
