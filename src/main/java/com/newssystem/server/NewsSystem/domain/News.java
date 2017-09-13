@@ -4,14 +4,28 @@ package com.newssystem.server.NewsSystem.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 @Document
 public class News {
 
     @Id
     public String id;
+
+    @NotNull(message = "el campo no puede estar vacío")
+    @Size(min = 5, max = 70, message = "minimo 5 caracteres, maximo 70 caracteres")
     public String title;
+
+    @NotNull
+    @Size(min = 5, message = "minimo 5 caracteres")
     public String text;
+
+
     public String data;
+
+    @NotNull
+    @Size(min = 1, message = "minimo 1 caracter")
     public String author;
 
     public News() {}
