@@ -12,13 +12,15 @@ public class News {
     public String title;
     public String text;
     public String data;
+    public String author;
 
     public News() {}
 
-    public News(String title, String text, String data) {
+    public News(String title, String text, String data, String author) {
         this.title = title;
         this.text = text;
         this.data = data;
+        this.author = author;
     }
 
     public String getId() {
@@ -51,5 +53,13 @@ public class News {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
